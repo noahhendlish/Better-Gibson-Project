@@ -1,0 +1,27 @@
+<style>
+    .head{
+        background-color:rgb(41,92,77);
+        color: white;
+    }
+    
+    .rowA{background-color:rgb(185,217,235);}
+    
+    .rowB{background-color:rgb(240,248,255);}
+</style>
+
+
+<div class="container">
+    <h1>List of Courses</h1>
+    <!--<div class="btn btn-light">-->
+    <!--<%= link_to 'Add A New Course', "courses/new" %>-->
+    <!--</div>-->
+    <!--<br /><br />-->
+    <div class="btn btn-light">
+    <%= link_to "Course Recommender", new_search_path %>
+    </div>
+
+    <br /><br />
+    
+    <%= render "shared/courseview"%>
+
+</div>

@@ -1,0 +1,37 @@
+<h2>Log in</h2>
+
+<%- if devise_mapping.omniauthable? %>
+    <% resource_class.omniauth_providers.each do |provider| %>
+       <br />
+       <%= link_to(image_tag("/images/connect_with_facebook_button.png", class:"fb-login-btn", :alt => "fb Login", :title => "Log In With Facebook"), omniauth_authorize_path(resource_name, provider), :class=>"btn-btn") %>
+       <br />
+    <% end -%>
+<% end -%>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <br />
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    
+    <%= f.submit "Log in" %><br />
+    
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

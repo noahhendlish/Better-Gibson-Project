@@ -1,0 +1,50 @@
+<style>
+    .head{
+        background-color:rgb(41,92,77);
+        color: white;
+    }
+    
+    .rowA{background-color:rgb(185,217,235);}
+    
+    .rowB{background-color:rgb(240,248,255);}
+</style>
+
+<div class= "container">
+    <h1>List of Students</h1>
+    
+    <div class="btn btn-light">
+    <%= link_to 'Add A New Student', "students/new" %>
+    </div>
+    
+    <br /><br /><br />
+    <table class='courseslist' border=1>
+        <tr class='head'>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Email</td>
+            <td>Grad. Year</td>
+            <td>Major</td>
+            <td>Credits Taken</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        <% classname = 'rowA' %>
+        <% @students.each do |student| %>
+            <tr class=<%= classname %>>
+                <td><%=student.last_name %></td>
+                <td><%=student.first_name %></td>
+                <td><%=student.email %></td>
+                <td><%=student.grad_year %></td>
+                <td><%=student.major %></td>
+                <td><%=student.credits_taken %></td>
+                <td><%=link_to image_tag("buttons/editBut.png", :width => 30, :height => 30, :alt => "edit button"), edit_student_path(student) %></td>
+                <td><%=link_to image_tag("buttons/deleteBut.png", :width => 30, :height => 30, :alt => "delete button"), student_path(student), method: :delete %> </td>
+            </tr>
+            <% if classname ==  'rowA' %>
+                <% classname = 'rowB' %>
+            <% else %>
+                <% classname = 'rowA' %>
+            <% end %>
+        <% end %>
+    </table>
+</div>

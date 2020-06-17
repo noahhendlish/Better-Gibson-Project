@@ -1,0 +1,19 @@
+<h1>Edit Major</h1>
+
+<br /><br />
+
+<div class="well">
+
+    <%= form_for @major do |f| %>
+    
+    <div class="form-group"> 
+    <%= f.label :major_name, class: "control-label" %>
+    <%= f.text_field :major_name, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="actions"> 
+    <%= f.submit "Update", :required => true, class: "btn btn-light" %>
+    </div> 
+    <% end %>
+    </div>
+</div>

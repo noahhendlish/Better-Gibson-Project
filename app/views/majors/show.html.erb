@@ -1,0 +1,45 @@
+<style>
+    .head{
+        background-color:rgb(41,92,77);
+        color: white;
+    }
+    
+    .rowA{background-color:rgb(185,217,235);}
+    
+    .rowB{background-color:white;}
+</style>
+<h1><%= @major.major_name %></h1>
+<table id = "sorted_table" class="table table-hover display" border=1>
+    <thead>
+    <tr class='head'>
+        <td>CRN</td>
+        <td>Course Code</td>
+        <td>Course Name</td>
+        <td>Location</td>
+        <td>Instructor</td>
+        <td>Days</td>
+        <td>Start</td>
+        <td>Finish</td>
+        <td>Credit Hours</td>
+    </tr>
+    <% classname = 'rowA' %>
+    </thead>
+    <% @courses.each do |course| %>
+        <tr class=<%= classname %>>
+            <td><%=course.course_num %></td>
+            <td><%=course.major_code  + '-' + course.course_code  + '-' + course.section %></td>
+            <td><%=course.name %></td>
+            <td><%=course.location %></td>
+            <td><%=course.instructor %></td>
+            <td><%=course.days %></td>
+            <td><%=course.start_time %></td>
+            <td><%=course.end_time %></td>
+            <td><%=course.credits %></td>
+        </tr>
+        <% if classname ==  'rowA' %>
+            <% classname = 'rowB' %>
+        <% else %>
+            <% classname = 'rowA' %>
+        <% end %>
+    <% end %>
+</table>

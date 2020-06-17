@@ -1,0 +1,36 @@
+Pencil vector for the edit button is credited to Flaticon.
+
+https://developers.facebook.com/docs/facebook-login/web
+
+Other Buttons:
+http://unicorn-ui.com/buttons/
+https://github.com/alexwolfe/Buttons
+https://material.io/develop/web/components/buttons/
+
+https://codepixelz.com/css/awesome-css-buttons/
+
+Javascript for Button Loading:
+https://developers.facebook.com/docs/facebook-login/web/
+https://developers.facebook.com/docs/facebook-login/web/login-button/
+https://developers.facebook.com/docs/javascript
+
+https://github.com/mmangino/facebooker2?fbclid=IwAR05G0LKeHIhP-8qekLwjNTCXmH5WDqGV5vNQa8GTpKgem0KYFp0DzReJjs
+
+
+https://developers.facebook.com/docs/facebook-login/best-practices/#buttondesign
+
+FB BUTTON CODE:
+Step 1: Include the JavaScript SDK on your page once, ideally right after the opening body tag.
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+Step 3: Place this code wherever you want the plugin to appear on your page.
+
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>

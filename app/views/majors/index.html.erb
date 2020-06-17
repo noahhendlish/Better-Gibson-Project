@@ -1,0 +1,29 @@
+<style>
+    .head{
+        background-color:rgb(41,92,77);
+        color: white;
+    }
+    
+    .rowA{background-color:rgb(185,217,235);}
+    
+    .rowB{background-color:white;}
+</style>
+
+<div class="container">
+    
+    <h1>List of Majors</h1>
+    <!--<br />-->
+    <!--<div class="btn btn-light">-->
+    <!--<%= link_to 'Add A New Major', "majors/new" %>-->
+    <!--</div>-->
+    <!--<br /> <br />-->
+
+    <% @majors.each do |major| %>
+        <ul>
+            <li><%major.major_name%></li>
+        </ul>
+    <% end %>
+    </div>
+    <br />
+    <%= render "shared/majorview"%>
+</div>

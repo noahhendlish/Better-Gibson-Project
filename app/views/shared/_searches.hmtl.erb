@@ -1,0 +1,21 @@
+<table id = "sorted_table" class='courseslist'>
+        <tr class='head'>
+            <td>CRN</td>
+            <td>Course Code</td>
+            <td>Course Name</td>
+        </tr>
+        <% classname = 'rowA' %>
+        
+    <% @search.each do |course| %>
+            <tr class=<%= classname %>>
+                <td><%=course.course_num %></td>
+                <td><%=course.major_code  + '-' + course.course_code  + '-' + course.section %></td>
+                <td><%=course.name %></td>
+            </tr>
+            <% if classname ==  'rowA' %>
+                <% classname = 'rowB' %>
+            <% else %>
+                <% classname = 'rowA' %>
+            <% end %>
+        <% end %>
+</table>

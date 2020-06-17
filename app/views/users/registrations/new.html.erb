@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-5 col-md-offset-2">
+    <h2>Sign up</h2>
+  
+  <%- if devise_mapping.omniauthable? %>
+    <% resource_class.omniauth_providers.each do |provider| %>
+       <br />
+       <%= link_to(image_tag("/images/connect_with_facebook_button.png", class:"fb-login-btn", :alt => "fb Login", :title => "Sign Up With Facebook"), omniauth_authorize_path(resource_name, provider), :class=>"btn-btn") %>
+       
+    <% end -%>
+<% end -%>
+  
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+        <br />
+      <div class="field">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name, autocomplete: "first name"%>
+      </div>
+   
+      <div class="field">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name, autocomplete: "last name" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      
+     <div class="field">
+        <%= f.label :grad_year %><br/>
+
+        <%= f.number_field(:grad_year,  in: 2012..2040, step: 1) %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :major%><br/>
+        <%= f.collection_select :major, Major.order(:major_name),:id,:major_name, include_blank: true %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :credits_taken %><br/>
+        <%= f.text_field :credits_taken %>
+        <!-- ADD  :required => true-->
+      </div>
+      
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      
+      <div class="actions">
+        <br />
+        <%= f.submit "Sign up" %><br />
+      </div>
+    <% end %>
+    
+    <%= render "users/shared/links" %>
+  </div>
+  </div>
+</div>

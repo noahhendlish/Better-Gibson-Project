@@ -1,0 +1,45 @@
+<table id = "sorted_table" class="table table-hover display">
+    <thead>
+        <tr class='head'>
+            <th>CRN</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Location</th>
+            <th>Instructor</th>
+            <th>Days</th>
+            <th>Start</th>
+            <th>Finish</th>
+            <th>Credit Hours</th>
+            <!--<th>Edit</th>-->
+            <!--<th>Delete</th>-->
+        </tr>
+        <% classname = 'rowA' %>
+    </thead>
+    <tbody>   
+    <% @courses.each do |course| %>
+            <tr class=<%= classname %>>
+                <td><%=course.course_num %></td>
+                <td><%=course.major_code  + '-' + course.course_code  + '-' + course.section %></td>
+                <td><%=course.name %></td>
+                <td><%=course.location %></td>
+                <td><%=course.instructor %></td>
+                <td><%=course.days %></td>
+                <td><%=course.start_time %></td>
+                <td><%=course.end_time %></td>
+                <td><%=course.credits %></td>
+               
+                <!--<td><%= link_to image_tag("buttons/editBut.png", :width => 30, :height => 30, :alt => "edit button"), edit_course_path(course) %></td>-->
+                <!--<td><%= link_to image_tag("buttons/deleteBut.png", :width => 30, :height => 30, :alt => "delete button"), course_path(course), method: :delete %> </td>-->
+            </tr>
+            <% if classname ==  'rowA' %>
+                <% classname = 'rowB' %>
+            <% else %>
+                <% classname = 'rowA' %>
+            <% end %>
+        <% end %>
+</tbody> 
+</table>
+</br>
+
+
+

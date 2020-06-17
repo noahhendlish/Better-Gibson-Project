@@ -1,0 +1,46 @@
+<h1>Edit Student</h1>
+
+
+<br /><br />
+
+<div class="well">
+
+    <%= form_for @student do |f| %>
+    
+    <div class="form-group">
+    <%= f.label :first_name, class: "control-label" %>
+    <%= f.text_field :first_name, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">    
+    <%= f.label :last_name, class: "control-label" %>
+    <%= f.text_field :last_name, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+    <%= f.label :email, class: "control-label" %>
+    <%= f.text_field :email, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+    <%= f.label :grad_year, class: "control-label" %>
+    <%= f.text_field :grad_year, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+    <%= f.label :major, class: "control-label" %>
+    <%= f.text_field :major, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+    <%= f.label :credits_taken, class: "control-label" %>
+    <%= f.text_field :credits_taken, :required => true, class: "form-control" %>
+    </div>
+    
+    <div class="actions"> 
+    <%= f.submit "Update", :required => true, class: "btn btn-light" %>
+    </div> 
+    <% end %>
+    </div>
+</div>
+    

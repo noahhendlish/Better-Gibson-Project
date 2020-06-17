@@ -1,0 +1,38 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//FOR CSS:
+//http://compass-style.org/install/
+//http://compass-style.org/reference/compass/css3/
+//https://github.com/RailsApps/rails_layout
+//http://sass-lang.com/install
+//https://www.bourbon.io/
+//http://oddbird.net/susy/
+//http://scout-app.io/
+
+//**https://status.heroku.com/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.TU_shield_img{
+    width: 100px;
+    height: auto;
+    display: block;
+    padding: 2em 2em;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about_img,.home_img{
+    padding: 0.9em 0.9em;
+    margin-bottom: 0.8em;
+    display: block;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    #width: 50%;
+}

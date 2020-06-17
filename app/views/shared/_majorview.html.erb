@@ -1,0 +1,27 @@
+<table id = "sorted_table"  class="table table-hover display">
+        <thead>
+        <tr class='head'>
+            <th>Major</th>
+            <th>View Courses</th>
+            <!--<th>Edit</th>-->
+            <!--<th>Delete</th>-->
+        </tr>
+        <% majorname = 'rowA' %>
+        </thead>
+        <tbody>
+        <% @majors.each do |major| %>
+            <tr class=<%= majorname %>>
+                <td><%=major.major_name %></td>
+                <td width="30" align="center"><%= link_to image_tag("buttons/view-button-hi.png", :width => 57, :height => 30, :alt => "edit button"), major_path(major) %></td>
+                <!--<td width="30" align="center"><%= link_to image_tag("buttons/editBut.png", :width => 30, :height => 30, :alt => "edit button"), edit_major_path(major) %></td>-->
+                <!--<td width="30" align="center"><%= link_to image_tag("buttons/deleteBut.png", :width => 30, :height => 30, :alt => "delete button"), major_path(major), method: :delete %></td>-->
+            </tr>
+            <% if majorname ==  'rowA' %>
+                <% majorname = 'rowB' %>
+            <% else %>
+                <% majorname = 'rowA' %>
+            <% end %>
+        <% end %>
+</tbody>
+</table>
+</br>
