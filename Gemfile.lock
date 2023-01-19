@@ -132,7 +132,7 @@ GEM
       activesupport (>= 4.2)
       arel (>= 6)
     popper_js (1.14.3)
-    rack (2.0.5)
+    rack (2.2.6.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.7)
